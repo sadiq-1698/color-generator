@@ -6,7 +6,6 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
   const bcg = rgb.join(',');
   const hex = rgbToHex(...rgb);
   const hexValue = `#${hexColor}`;
-  console.log(hex);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setAlert(false)
@@ -21,7 +20,7 @@ const SingleColor = ({ rgb, weight, index, hexColor }) => {
         setAlert(true);
         if(!navigator.clipboard)
             return;
-        navigator.clipboard.writeText(hexValue)
+        navigator.clipboard.writeText(hex)
       }}
     >
       <p className='percent-value'>{weight}%</p>
